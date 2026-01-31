@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work — Still Works Architecture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="https://images.squarespace-cdn.com/content/v1/68bc8638ac692f05e2696ee4/9ba16221-c988-4586-964e-188935976534/STILL-WORKS_Logo-Stacked.png" alt="Still Works Architecture" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <div class="projects-index">
+            <ul class="projects-list">
+                <!-- Replace these with your actual projects -->
+                <!-- Each project needs: title, link (optional), and image path -->
+                <li><a href="/Esopus-Garage-Conversion" data-image="images/projects/Esopus Garage Conversion/Esopus-Garage-Conversion_IMG-01.PNG">Esopus Garage Conversion</a></li>
+                <li><a href="/Upper-East-Side-Apartment" data-image="images/projects/Upper East Side Apartment/Upper-East-Side-Apartment_IMG-01.PNG">Upper East Side Apartment</a></li>
+                <li><a href="/Well-Nice-Wine-Bar" data-image="images/projects/Well Nice Wine Bar/Well-Nice-Wine-Bar_IMG-01.PNG">Well Nice Wine Bar</a></li>
+                <li><a href="/Rosendale-Cottage-Renovation" data-image="images/projects/Rosendale Cottage Renovation/Rosendale-Cottage-Renovation_IMG-01.JPG">Rosendale Cottage Renovation</a></li>
+                <li><a href="/Neversink-Hunting-Cabin" data-image="Neversink-Hunting-Cabin_IMG-01.JPG">Neversink Hunting Cabin</a></li>
+            </ul>
+            
+            <div class="projects-preview">
+                <!-- Images will be added dynamically by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Get all project links and preview container
+        const projectLinks = document.querySelectorAll('.projects-list a');
+        const previewContainer = document.querySelector('.projects-preview');
+
+        // Create image elements for each project
+        projectLinks.forEach((link, index) => {
+            const imagePath = link.getAttribute('data-image');
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = link.textContent;
+            img.dataset.index = index;
+            previewContainer.appendChild(img);
+
+            // Add hover event listeners
+            link.addEventListener('mouseenter', () => {
+                // Hide all images
+                previewContainer.querySelectorAll('img').forEach(img => {
+                    img.classList.remove('active');
+                });
+                // Show corresponding image
+                const targetImg = previewContainer.querySelector(`img[data-index="${index}"]`);
+                if (targetImg) {
+                    targetImg.classList.add('active');
+                }
+            });
+        });
+
+        // Optional: hide images when mouse leaves the projects list
+        document.querySelector('.projects-list').addEventListener('mouseleave', () => {
+            previewContainer.querySelectorAll('img').forEach(img => {
+                img.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

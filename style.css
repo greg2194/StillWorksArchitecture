@@ -1,0 +1,363 @@
+:root {
+  --color-text: #1a1a1a;
+  --color-background: #ffffff;
+  --color-accent: #2a2a2a;
+  --font-serif: 'Baskerville', 'Libre Baskerville', 'Baskerville Old Face', Georgia, serif;
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links li {
+}
+
+.nav-links a {
+  font-family: var(--font-serif);
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 20px solid white;
+  box-sizing: border-box;
+}
+
+.hero-logo {
+  position: relative;
+  z-index: 10;
+  max-width: 400px;
+  width: 80%;
+}
+
+/* Content Pages */
+.content-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 4rem;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-container.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.content-text {
+  max-width: 500px;
+}
+
+.content-image-container {
+  position: sticky;
+  top: 140px;
+}
+
+.content-image-container img {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.content-container h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.content-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.content-container a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  transition: var(--transition-smooth);
+}
+
+.content-container a:hover {
+  opacity: 0.6;
+}
+
+.about-image, .contact-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 3rem auto;
+  display: block;
+  opacity: 0.7;
+}
+
+/* Work Page - Projects Index */
+.projects-index {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: var(--font-serif);
+  position: relative;
+  min-height: calc(100vh - 200px);
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.projects-list li {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.projects-list a {
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+  white-space: nowrap;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.projects-list a:hover {
+  color: rgb(102, 103, 71);
+}
+
+.projects-preview {
+  position: fixed;
+  left: 40%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 45vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.projects-preview img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.projects-preview img.active {
+  opacity: 1;
+}
+
+/* Contact Info */
+.contact-info {
+  font-size: 1.2rem;
+  line-height: 2;
+  margin: 2rem 0;
+}
+
+/* Contact Form */
+.contact-form {
+  margin-top: 3rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid var(--color-text);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  background: transparent;
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: rgb(102, 103, 71);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  padding: 1rem 2.5rem;
+  border: 2px solid var(--color-text);
+  background: transparent;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: var(--color-text);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .content-container h1 {
+    font-size: 2rem;
+  }
+
+  .content-container p {
+    font-size: 1rem;
+  }
+
+  .content-container.two-column {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .content-image-container {
+    position: static;
+  }
+
+  .projects-index {
+    flex-direction: column;
+  }
+
+  .projects-preview {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 50vh;
+    margin-top: 2rem;
+  }
+
+  .projects-list {
+    margin-top: 0;
+  }
+
+  .projects-list a {
+    white-space: normal;
+  }
+}

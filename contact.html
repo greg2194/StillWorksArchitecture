@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Still Works Architecture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="https://images.squarespace-cdn.com/content/v1/68bc8638ac692f05e2696ee4/9ba16221-c988-4586-964e-188935976534/STILL-WORKS_Logo-Stacked.png" alt="Still Works Architecture" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <div class="content-container two-column">
+            <div class="content-text">
+                <h1>Contact</h1>
+                
+                <p>Curious about a project? Want to work with me? Just excited about what I'm up to? Reach out! I'd love to hear from you.</p>
+                
+                <div class="contact-info">
+                    <a href="mailto:Greg@StillWorksArch.com">Greg@StillWorksArch.com</a><br>
+                    <a href="tel:+15186504444">(518) 650-4444</a>
+                </div>
+                
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name (required)</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name (required)</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email (required)</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message (required)</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SEND</button>
+                </form>
+            </div>
+            
+            <div class="content-image-container">
+                <img src="https://images.squarespace-cdn.com/content/v1/68bc8638ac692f05e2696ee4/e0eba114-06cf-48a4-b8d6-038b8e68269d/IMG_1164.jpg" alt="Contact">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
