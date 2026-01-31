@@ -212,7 +212,7 @@ nav {
 .projects-preview {
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 35%;
   width: 20vw;
   height: 35vh;
   display: flex;
