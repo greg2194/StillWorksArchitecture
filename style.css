@@ -177,6 +177,7 @@ nav {
   font-family: var(--font-serif);
   position: relative;
   min-height: calc(100vh - 200px);
+  margin-top: 150px;
 }
 
 .projects-list {
