@@ -178,7 +178,7 @@ nav {
 .projects-index {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 150px auto 0;
   padding: 0 2rem;
   font-family: var(--font-serif);
   position: relative;
