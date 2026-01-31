@@ -211,9 +211,9 @@ nav {
 
 .projects-preview {
   position: fixed;
-  left: 40%;
-  top: 50%;
-  transform: translate(100px, -45%);
+  left: 60%;
+  top: 30%;
+  transform: translate(150px, -70%);
   width: 20vw;
   height: 35vh;
   display: flex;
