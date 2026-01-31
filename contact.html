@@ -37,6 +37,7 @@
                 
                 <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="subject" value="New contact form submission from StillWorksArch.com">
                     <p style="display: none;">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
@@ -71,5 +72,41 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const form = document.querySelector('.contact-form');
+        const submitBtn = document.querySelector('.submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Change button text
+                submitBtn.textContent = 'SENT!';
+                submitBtn.disabled = true;
+                
+                // Reset form fields
+                form.reset();
+                
+                // Optional: Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = 'SEND';
+                    submitBtn.disabled = false;
+                }, 3000);
+            })
+            .catch((error) => {
+                alert('Error submitting form. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>
