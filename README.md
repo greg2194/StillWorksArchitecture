@@ -136,7 +136,7 @@ Once set up, updating your site is simple. Here's the typical workflow:
 
 ```bash
 # 1. Navigate to your project folder
-cd /path/to/your/project
+cd C:\Users\greg\Desktop\Still-Works\Still-Works_Website
 
 # 2. Check which files you've changed (optional but helpful)
 git status

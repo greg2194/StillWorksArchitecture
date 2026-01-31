@@ -210,11 +210,11 @@ nav {
 
 .projects-preview {
   position: fixed;
-  left: 40%;
+  left: 45%;
   top: 50%;
   transform: translate(0, -50%);
-  width: 27vw;
-  height: 48vh;
+  width: 20vw;
+  height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,7 +231,7 @@ nav {
 }
 
 .projects-preview img.active {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 /* Contact Info */
