@@ -213,7 +213,7 @@ nav {
   position: fixed;
   left: 40%;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(50, -45%);
   width: 20vw;
   height: 35vh;
   display: flex;
