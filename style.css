@@ -172,7 +172,7 @@ nav {
 .projects-index {
   display: flex;
   max-width: 1200px;
-  margin: 100px auto 0;
+  margin: 0 auto;
   padding: 0 2rem;
   font-family: var(--font-serif);
   position: relative;
@@ -210,11 +210,11 @@ nav {
 
 .projects-preview {
   position: fixed;
-  left: 45%;
+  left: 40%;
   top: 50%;
   transform: translate(0, -50%);
-  width: 20vw;
-  height: 35vh;
+  width: 27vw;
+  height: 48vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,7 +231,7 @@ nav {
 }
 
 .projects-preview img.active {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /* Contact Info */
@@ -239,6 +239,47 @@ nav {
   font-size: 1.1rem;
   line-height: 1.8;
   margin: 2rem 0;
+}
+
+/* Project Page - Scrolling Image Gallery */
+.project-images-container {
+  position: sticky;
+  top: 140px;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+}
+
+.project-images-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
+
+.project-images-scroll img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+/* Custom scrollbar for image gallery */
+.project-images-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-images-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-images-scroll::-webkit-scrollbar-thumb {
+  background: rgba(26, 26, 26, 0.3);
+  border-radius: 4px;
+}
+
+.project-images-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 26, 26, 0.5);
 }
 
 /* Contact Form */
@@ -343,6 +384,16 @@ nav {
 
   .content-image-container {
     position: static;
+  }
+
+  .project-images-container {
+    position: static;
+    height: auto;
+  }
+
+  .project-images-scroll {
+    overflow-y: visible;
+    padding-right: 0;
   }
 
   .projects-index {
