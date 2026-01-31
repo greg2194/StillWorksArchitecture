@@ -208,8 +208,8 @@ nav {
   left: 40%;
   top: 50%;
   transform: translate(0, -50%);
-  width: 45vw;
-  height: 80vh;
+  width: 27vw;
+  height: 48vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,6 @@ nav {
   width: auto;
   height: auto;
   opacity: 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .projects-preview img.active {
