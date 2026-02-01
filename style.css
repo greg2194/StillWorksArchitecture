@@ -179,7 +179,7 @@ nav {
 .projects-index {
   display: flex;
   max-width: 1200px;
-  margin: 100px auto 0;
+  margin: 0 auto;
   padding: 0 2rem;
   font-family: var(--font-serif);
   position: relative;
@@ -346,6 +346,11 @@ nav {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Remove fixed header on mobile */
+  header {
+    position: relative;
+  }
+
   nav {
     flex-direction: column;
     gap: 1.5rem;
@@ -364,6 +369,16 @@ nav {
     font-size: 0.9rem;
   }
 
+  /* Adjust content padding since header is no longer fixed */
+  .content-page {
+    padding-top: 2rem;
+  }
+
+  .content-page.project-page {
+    height: auto;
+    overflow: visible;
+  }
+
   .content-container h1 {
     font-size: 2rem;
   }
@@ -372,34 +387,39 @@ nav {
     font-size: 1rem;
   }
 
+  /* Stack two-column layouts vertically */
   .content-container.two-column {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .content-text {
+    max-width: 100%;
   }
 
   .content-image-container {
     position: static;
   }
 
+  /* Project pages: text on top, images below */
   .project-images-container {
     position: static;
     height: auto;
+    margin-top: 2rem;
   }
 
   .project-images-scroll {
     overflow-y: visible;
   }
 
+  /* Work page: just show list, no preview */
   .projects-index {
     flex-direction: column;
+    margin-top: 2rem;
   }
 
   .projects-preview {
-    position: static;
-    transform: none;
-    width: 100%;
-    height: 50vh;
-    margin-top: 2rem;
+    display: none;
   }
 
   .projects-list {
@@ -408,5 +428,14 @@ nav {
 
   .projects-list a {
     white-space: normal;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    padding: 0 1rem;
+  }
+
+  .hero-image {
+    border: 10px solid white;
   }
 }
