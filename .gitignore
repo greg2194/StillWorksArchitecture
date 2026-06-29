@@ -1,0 +1,8 @@
+# Windows / OneDrive junk
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Local archive of original full-size images — keep these OUT of GitHub.
+# GitHub rejects any single file over 100MB, and the site doesn't use them.
+**/archive/
